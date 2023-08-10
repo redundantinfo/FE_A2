@@ -71,7 +71,7 @@ function MovieList() {
                 .filter(screening => screening.movieId === movie.id)
                 .map(screening => (
                   <li key={screening.id}>
-                    <p>Screening at: {screening.time}</p>
+                    <p>Screening at: {new Date(screening.time).toLocaleString([], {hour: '2-digit', minute: '2-digit'})}</p>
                     <p>In auditorium: {screening.auditoriumId}</p>
                   </li>
                 ))}

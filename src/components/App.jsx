@@ -1,13 +1,15 @@
 import React from 'react';
 import './style.css';
-import Navbar from './Navbar'; // Import the Navbar component
+import Navbar from './Navbar';
 import MovieList from './MovieList';
+import Footer from './Footer';
 
 function App() {
   return (
     <div className="App">
-      <Navbar /> {/* Render the Navbar component */}
-      <MovieList /> {/* Render the MovieList component */}
+      <Navbar /> {/* Render Navbar component */}
+      <MovieList /> {/* Render MovieList component */}
+      <Footer /> {/* Render Footer component */}
     </div>
   );
 }
