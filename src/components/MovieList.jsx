@@ -31,12 +31,16 @@ function MovieList() {
       ? a.description.length
       : sortOption === 'description.categories'
       ? a.description.categories.join(', ')
+      : sortOption === 'date'
+      ? new Date(screenings.find(screening => screening.movieId === a.id).time)
       : a[sortOption];
 
     const bValue = sortOption === 'description.length'
       ? b.description.length
       : sortOption === 'description.categories'
       ? b.description.categories.join(', ')
+      : sortOption === 'date'
+      ? new Date(screenings.find(screening => screening.movieId === b.id).time)
       : b[sortOption];
 
     if (typeof aValue === 'string' && typeof bValue === 'string') {
@@ -53,7 +57,7 @@ function MovieList() {
         <option value="title">Title</option>
         <option value="description.length">Duration</option>
         <option value="description.categories">Categories</option>
-        {/* Add more options as needed */}
+        <option value="date">Date</option> {/* Add the Sort By Date option */}
       </select>
 
       <h2>Movies:</h2>
@@ -71,7 +75,13 @@ function MovieList() {
                 .filter(screening => screening.movieId === movie.id)
                 .map(screening => (
                   <li key={screening.id}>
-                    <p>Screening at: {new Date(screening.time).toLocaleString([], {hour: '2-digit', minute: '2-digit'})}</p>
+                    <p>Screening at: {new Date(screening.time).toLocaleString([], {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}</p>
                     <p>In auditorium: {screening.auditoriumId}</p>
                   </li>
                 ))}
