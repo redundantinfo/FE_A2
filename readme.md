@@ -69,12 +69,35 @@ date: Sorts movies by their screening dates.
 
 The sortedMovies() function sorts the movies based on the selected sorting option. It calculates values for comparison based on the chosen option and then sorts the movies accordingly. 
 
-The sorting options and their respective values are:  
+sortedMovies holds the sorted list of movies.  
+
+movies.slice() creates a shallow copy of the movies array.  
+
+The sort function is called on the copied array with a comparison function as an argument. The comparison function determines the order of elements in the sorted array.  
+
+Inside the comparison function, aValue and bValue are calculated based on the sortOption. The sortOption represents the chosen sorting criteria.  
+
+The conditional operators are used to calculate the values for aValue and bValue based on sortOption.  
+
+If sortOption is 'description.length', the length of the movie's description is used for comparison.  
+
+If sortOption is 'description.categories', the categories from the movie's description are joined into a comma-separated string and used for comparison.  
+
+If sortOption is 'date', the screening is extracted using screenings.find(), based on the movieId and converted into a Date object for comparison.  
+
+For other cases, the value of the selected sorting option is directly used for comparison.  
+
+The if statement checks if both aValue and bValue are strings. If they are, a comparison using localeCompare is performed. If they are not strings (e.g., numbers), a numerical comparison is performed using subtraction.  
+
+The result of the comparison determines the order of the elements. If the comparison result is negative, a comes before b in the sorted array. If the result is positive, b comes before a. If the result is zero, the order remains unchanged.  
+
+The sorted array is then returned.  
+
+__The sorting options and their respective values are:__  
 title: Sorts alphabetically by movie title.  
 description.length: Sorts by movie duration in minutes.  
 description.categories: Sorts by movie categories.  
-date: Sorts by screening date.  
-For string comparisons, localeCompare is used. For numerical comparisons, subtraction is used.  
+date: Sorts by screening date.   
 
 # Footer Component
 The Footer component displays footer information including links to privacy policy, terms of use, and contact, along with the copyright information.
