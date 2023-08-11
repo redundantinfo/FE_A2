@@ -31,13 +31,13 @@ React (v16.8 or higher)
 
 ## Component Structure
 
-├── src/
-│ ├── components/
-│ │ ├── MovieList.jsx
-│ │ └── ...
-│ ├── App.js
-│ └── ...
-└── ...
+├── src/  
+│ ├── components/  
+│ │ ├── MovieList.jsx  
+│ │ └── ...  
+│ ├── App.js  
+│ └── ...  
+└── ...  
 
 ## License
 
