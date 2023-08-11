@@ -57,7 +57,7 @@ function MovieList() {
         <option value="title">Title</option>
         <option value="description.length">Duration</option>
         <option value="description.categories">Categories</option>
-        <option value="date">Date</option> {/* Add the Sort By Date option */}
+        <option value="date">Date</option>
       </select>
 
       <h2>Movies:</h2>
@@ -69,7 +69,7 @@ function MovieList() {
             <p>Duration: {movie.description.length} Minutes</p>
             <p>Categories: {movie.description.categories.join(', ')}</p>
           
-            {/* Display screening data for this movie */}
+            {/* Display screening data */}
             <ul>
               {screenings
                 .filter(screening => screening.movieId === movie.id)

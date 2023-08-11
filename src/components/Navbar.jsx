@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style.css'; // Import your CSS file
+import './style.css';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +21,6 @@ function Navbar() {
           <li><a href="#">Home</a></li>
           <li><a href="#">Movies</a></li>
           <li><a href="#">About</a></li>
-          {/* Add more links as needed */}
         </ul>
       </div>
     </nav>
